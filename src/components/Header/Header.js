@@ -1,11 +1,14 @@
-import React from 'react'
-import AmazonLogo from 'C:/Users/user/Desktop/Big Projects/amazon-clone/amazon/src/assets/logo.svg'
-import { ChevronDownIcon, MagnifyingGlassIcon, MapPinIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import React, { useState } from 'react'
+import '../../App.css'
+import AmazonLogo from '../../assets/logo.svg'
+import { Bars3BottomRightIcon, ChevronDownIcon, MagnifyingGlassIcon, MapPinIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ReactComponent as CartIcon } from './Cart.svg'
 
 function Header() {
+    const [isOpen, setIsOpen] = useState()
+
     return (
-        <div className='bg-dark-1 sticky top-0 px-2 py-4 flex space-x-4 items-center'>
+        <div className='bg-dark-1 z-10 sticky justify-between header-main top-0 px-2 py-4 flex space-x-4 items-center'>
 
             {/* amazon logo */}
             <div>
@@ -13,7 +16,9 @@ function Header() {
             </div>
 
             {/* header options */}
-            <div className='flex space-x-4 items-center w-full'>
+            <Bars3BottomRightIcon onClick={() => setIsOpen(!isOpen)} className={`h-6 ${isOpen ? 'hidden' : 'static'} md:hidden stroke-white z-10`} />
+            <XMarkIcon onClick={() => setIsOpen(!isOpen)} className={`h-6 ${!isOpen ? 'hidden' : 'static'} md:hidden stroke-white z-10`} />
+            <div className={`${isOpen ? "flex-row" : "hidden"} absolute top-0 right-0 bg-dark-1 p-2 h-screen md:h-auto md:static md:mt-0 md:p-0 w-[70%] space-y-4 md:space-y-0 mt-4 md:flex space-x-4 items-center md:w-full`}>
                 {/* location */}
                 <div className='flex items-end'>
                     <MapPinIcon className='h-5 w-5' />
