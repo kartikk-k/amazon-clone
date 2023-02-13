@@ -5,13 +5,16 @@ import Product from '../Product/Product'
 import ProductsList from '../Product/ProductsList'
 import EchodotImg from '../../assets/images/products/product2.png'
 import EchodotImg2 from '../../assets/images/products/product1.png'
+import LoadingBar from '../LoadingBar/LoadingBar'
 
 function Home() {
     return (
-        <div className='bg-gray-200'>
+        <div>
+            <LoadingBar />
+
             {/* banner image */}
             <div>
-                <img src={BannerImg} alt="Join Prime" className='banner-img select-none cursor-pointer object-cover object-top' />
+                <img src={BannerImg} alt="Join Prime" className='object-cover object-top cursor-pointer select-none banner-img' />
             </div>
 
             <div className='mt-4'>
