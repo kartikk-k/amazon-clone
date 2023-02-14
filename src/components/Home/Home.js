@@ -22,18 +22,21 @@ function Home() {
                 {/* list of 3 products */}
                 <ProductsList>
                     <Product
+                        id={1001}
                         title="Echo Dot (4th Gen, 2020 release)| Smart speaker with Alexa (Black)"
-                        price="₹4,499"
+                        price={4499}
                         imgUrl={EchodotImg}
                     />
                     <Product
-                        title="Echo Dot (4th Gen, 2020 release)| Smart speaker with Alexa (Black)"
-                        price="₹4,499"
+                        id={1002}
+                        title="Echo Dot (4th Gen, 2021 release)| Smart speaker with Alexa (Black)"
+                        price={8499}
                         imgUrl={EchodotImg2}
                     />
                     <Product
-                        title="Echo Dot (4th Gen, 2020 release)| Smart speaker with Alexa (Black)"
-                        price="₹4,499"
+                        id={1004}
+                        title="Echo Dot (4th Gen, 2022 release)| Smart speaker with Alexa (Black)"
+                        price={4499}
                         imgUrl={EchodotImg}
                     />
                 </ProductsList>
@@ -42,7 +45,7 @@ function Home() {
                 <ProductsList>
                     <Product
                         title="Echo Dot (4th Gen, 2020 release)| Smart speaker with Alexa (Black)"
-                        price="₹4,499"
+                        price={8499}
                         imgUrl={EchodotImg2}
                     />
                 </ProductsList>

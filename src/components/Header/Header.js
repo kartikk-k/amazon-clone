@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../../App.css'
 import AmazonLogo from '../../assets/logo.svg'
 import { Bars3BottomRightIcon, ChevronDownIcon, MagnifyingGlassIcon, MapPinIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ReactComponent as CartIcon } from '../../assets/icons/Cart.svg'
 import { Link } from 'react-router-dom'
+import CartContext from '../../context/CartContext'
 
 function Header() {
+    let { itemsCount } = useContext(CartContext)
     const [isOpen, setIsOpen] = useState()
 
     return (
@@ -19,11 +21,20 @@ function Header() {
             </div>
 
             {/* for mobile view */}
-            <Bars3BottomRightIcon onClick={() => setIsOpen(!isOpen)} className={`h-6 ${isOpen ? 'hidden' : 'visible'} md:hidden stroke-white z-10`} />
+            <div className='flex items-center space-x-2 md:hidden'>
+                <Link to="/checkout">
+                    <div className='relative'>
+                        <CartIcon />
+                        <p className='absolute bottom-4 text-xs font-semibold left-[40%] text-amazon'>{itemsCount}</p>
+                    </div>
+                </Link>
+                <Bars3BottomRightIcon onClick={() => setIsOpen(!isOpen)} className={`h-8 ${isOpen ? 'hidden' : 'visible'} md:hidden stroke-white z-10`} />
+            </div>
 
             {/* header options */}
             <XMarkIcon onClick={() => setIsOpen(!isOpen)} className={`h-6 ${!isOpen ? 'hidden' : 'visible'} md:hidden stroke-white z-10`} />
             <div className={`${isOpen ? "flex-row" : "hidden"} absolute top-0 right-0 bg-dark-1 p-2 h-screen md:h-auto md:static md:mt-0 md:p-0 w-[70%] space-y-4 md:space-y-0 mt-4 md:flex space-x-4 items-center md:w-full`}>
+
                 {/* location */}
                 <div className='flex items-end'>
                     <MapPinIcon className='w-5 h-5' />
@@ -66,10 +77,10 @@ function Header() {
 
                 {/* cart */}
                 <Link to="/checkout">
-                    <div className='flex items-end space-x-1'>
+                    <div className='items-end hidden space-x-1 md:visible md:flex'>
                         <div className='relative'>
                             <CartIcon />
-                            <p className='absolute bottom-4 text-xs font-semibold left-[40%] text-amazon'>12</p>
+                            <p className='absolute bottom-4 text-xs font-semibold left-[40%] text-amazon'>{itemsCount}</p>
                         </div>
                         <p className='text-xs font-semibold'>Cart</p>
                     </div>
