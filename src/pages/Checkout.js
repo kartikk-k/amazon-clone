@@ -1,19 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
-import LoadingBar from '../LoadingBar/LoadingBar'
-import Subtotal from './Subtotal'
-import Quantity from './Quantity'
+import LoadingBar from '../components/LoadingBar/LoadingBar'
+import Subtotal from '../components/Checkout/Subtotal'
+import Quantity from '../components/Checkout/Quantity'
 import { ArrowRightIcon, FaceFrownIcon } from '@heroicons/react/24/outline'
-import CartContext from '../../context/CartContext'
+import CartContext from '../context/CartContext'
 
 
 function Cart() {
     let { cartItems, removeItem } = useContext(CartContext)
-
-    // update quantity of item
-    const handleChange = (data) => {
-        console.log(data)
-    }
-
 
     return (
         <div>
@@ -53,7 +47,7 @@ function Cart() {
                                 </div>
                             </div>
                         )) :
-                            <p className='flex items-center px-4'><span><FaceFrownIcon className='w-6 mr-1' /></span> No Items in Cart</p>}
+                            <p className='flex items-center px-4 pb-2'><span><FaceFrownIcon className='w-6 mr-1' /></span> No Items in Cart</p>}
 
                     </div>
                 </div>

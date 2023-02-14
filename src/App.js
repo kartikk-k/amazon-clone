@@ -1,24 +1,33 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Home from './components/Home/Home';
+import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
-import Cart from './components/Checkout/Checkout';
+import Cart from './pages/Checkout';
 
 function App() {
   return (
     <div className='min-h-screen overflow-x-hidden bg-gray-200'>
       {/* Header */}
-      <Header />
 
-      <Routes>
+      <div>
 
-        {/* Home */}
-        <Route exact path='' element={<Home />} />
+        <Header />
+        <Routes>
 
-        {/* Cart */}
-        <Route exact path='/checkout' element={<Cart />} />
+          {/* Home */}
+          <Route exact path='' element={<Home />} />
 
-      </Routes>
+          {/* Cart */}
+          <Route path='/checkout' element={<Cart />} />
+
+        </Routes>
+      </div>
+
+      <div>
+        <Routes>
+          {/* <Route path='/login' element={<} /> */}
+        </Routes>
+      </div>
     </div>
   );
 }

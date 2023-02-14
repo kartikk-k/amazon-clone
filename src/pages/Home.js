@@ -1,11 +1,11 @@
 import React from 'react'
-import '../../App.css'
-import BannerImg from '../../assets/images/banner2.png'
-import Product from '../Product/Product'
-import ProductsList from '../Product/ProductsList'
-import EchodotImg from '../../assets/images/products/product2.png'
-import EchodotImg2 from '../../assets/images/products/product1.png'
-import LoadingBar from '../LoadingBar/LoadingBar'
+import '../App.css'
+import BannerImg from '../assets/images/banner2.png'
+import Product from '../components/Product/Product'
+import ProductsList from '../components/Product/ProductsList'
+import EchodotImg from '../assets/images/products/product2.png'
+import EchodotImg2 from '../assets/images/products/product1.png'
+import LoadingBar from '../components/LoadingBar/LoadingBar'
 
 function Home() {
     return (

@@ -8,7 +8,7 @@ function Subtotal() {
 
     return (
         <div>
-            <div id='checkout' className='m-2 bg-white rounded-md shadow-md w-[270px] overflow-hidden'>
+            <div id='checkout' className='m-2 bg-white rounded-md shadow-md md:w-[270px] overflow-hidden'>
                 <div>
                     <h1 className='p-2 text-center text-white bg-gray-500'>Checkout</h1>
                 </div>
