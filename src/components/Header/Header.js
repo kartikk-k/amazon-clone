@@ -64,10 +64,12 @@ function Header() {
                 </div>
 
                 {/* sign in */}
-                <div>
-                    <p className='text-xs text-gray-300'>Hello, sign in</p>
-                    <p className='flex items-center text-xs font-semibold'>Accounts & Lists <span><ChevronDownIcon className='h-4 pl-2' /></span></p>
-                </div>
+                <Link to="/login">
+                    <div>
+                        <p className='text-xs text-gray-300'>Hello, sign in</p>
+                        <p className='flex items-center text-xs font-semibold'>Accounts & Lists <span><ChevronDownIcon className='h-4 pl-2' /></span></p>
+                    </div>
+                </Link>
 
                 {/* orders */}
                 <div>

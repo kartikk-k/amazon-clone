@@ -19,7 +19,7 @@ function Cart() {
             </div>
 
             <div className='md:flex'>
-                <div className='flex-1 m-2 overflow-hidden bg-white rounded-md'>
+                <div className='flex-1 m-2 overflow-hidden bg-white rounded-md shadow-md'>
                     <div className='flex items-center justify-between px-4 '>
                         <h1 className='py-2 text-lg font-semibold'>Shopping Cart</h1>
                         <a href='#checkout' className='flex items-center px-2 bg-gray-300 rounded-md hover:bg-gray-400 md:hidden'>Checkout <span><ArrowRightIcon className='w-4 ml-1' /></span></a>
@@ -27,7 +27,7 @@ function Cart() {
                     {/* cart products */}
                     <div>
                         {/* single product */}
-                        {cartItems.length != 0 ? cartItems.map((product) => (
+                        {cartItems.length !== 0 ? cartItems.map((product) => (
                             <div key={product.id} className='flex w-full px-2 py-4 space-x-2 overflow-hidden border-b border-b-gray-300 '>
                                 <div className='flex items-center justify-center bg-gray-400 rounded-md'>
                                     <img src={product.imgUrl} className="max-h-[200px] min-w-[150px] cursor-pointer hover:scale-105 duration-500" />
